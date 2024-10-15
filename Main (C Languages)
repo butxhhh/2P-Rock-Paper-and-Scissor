@@ -1,0 +1,56 @@
+𝓦𝓡𝓘𝓣𝓣𝓔𝓝 𝓑𝓨 𝓑𝓤𝓣𝓒𝓗
+
+#include <stdio.h>
+
+// Function to determine the winner
+void determineWinner(int player1Choice, int player2Choice) {
+    if (player1Choice == player2Choice) {
+        printf("It's a tie!\n");
+    } else if ((player1Choice == 0 && player2Choice == 2) || 
+               (player1Choice == 1 && player2Choice == 0) || 
+               (player1Choice == 2 && player2Choice == 1)) {
+        printf("Player 1 wins!\n");
+    } else {
+        printf("Player 2 wins!\n");
+    }
+}
+
+int main() {
+    int player1Choice, player2Choice;
+
+    printf("Enter Player 1's choice (0 for Rock, 1 for Paper, 2 for Scissor): ");
+    scanf("%d", &player1Choice);
+
+    printf("Enter Player 2's choice (0 for Rock, 1 for Paper, 2 for Scissor): ");
+    scanf("%d", &player2Choice);
+
+    printf("Player 1 chose: ");
+    switch (player1Choice) {
+        case 0:
+            printf("Rock\n");
+            break;
+        case 1:
+            printf("Paper\n");
+            break;
+        case 2:
+            printf("Scissor\n");
+            break;
+    }
+
+    printf("Player 2 chose: ");
+    switch (player2Choice) {
+        case 0:
+            printf("Rock\n");
+            break;
+        case 1:
+            printf("Paper\n");
+            break;
+        case 2:
+            printf("Scissor\n");
+            break;
+    }
+
+    determineWinner(player1Choice, player2Choice);
+
+    return 0;
+}
